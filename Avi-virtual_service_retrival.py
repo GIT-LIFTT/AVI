@@ -17,7 +17,7 @@ actual_results = (data["results"][0])
 
 print(actual_results["name"])
 
-#input("wait")
+
 
 actual_results2 = (data["results"][1])
 
