@@ -11,9 +11,20 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, data=payload,verify=False)
 
-data = (response.)
+data = (response.json())
 
-print(type(data))
+actual_results = (data["results"][0])
+
+print(actual_results["name"])
+
+#input("wait")
+
+actual_results2 = (data["results"][1])
+
+print(actual_results2["name"])
+
+#for i in actual_results:
+#    print(i)
 
 
 
