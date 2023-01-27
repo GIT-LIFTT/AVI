@@ -13,19 +13,12 @@ response = requests.request("GET", url, headers=headers, data=payload,verify=Fal
 
 data = (response.json())
 
-actual_results = (data["results"][0])
+actual_results = (data["results"])
 
-print(actual_results["name"])
-
-
-
-actual_results2 = (data["results"][1])
-
-print(actual_results2["name"])
-
-#for i in actual_results:
-#    print(i)
-
+for eachvip in actual_results:
+    print(eachvip["name"])
+    print(eachvip["discovered_networks"])
+print(len(actual_results))
 
 
 
