@@ -15,12 +15,22 @@ data = (response.json())
 
 actual_results = (data["results"])
 
+vip_dict = {}
+
 for eachvip in actual_results:
-    print(eachvip["name"])
-    print(eachvip["discovered_networks"])
-print(len(actual_results))
+    
+    vip_name = (eachvip["name"])
+    vip_uuid = (eachvip["uuid"])
+    vip_ipaddress = (eachvip["ip_address"]["addr"])
+    vip_status = (eachvip["enabled"])
+    vip_port = (eachvip["services"][0]["port"])
+    vip_lastmodified =(eachvip["_last_modified"])
+    vip_dict[eachvip["name"]] = {"vip_name": vip_name,"vip_uuid": vip_uuid,"vip_ipaddress": vip_ipaddress,"vip_status": vip_status,"vip_port": vip_port,"vip_lastmodified":vip_lastmodified}
+
+##write the data to a dictionary data structure
 
 
+print(vip_dict)
 
 #database connector 
 
